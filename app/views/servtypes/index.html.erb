@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Servtypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Servtypeicn</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @servtypes.each do |servtype| %>
+      <tr>
+        <td><%= servtype.name %></td>
+        <td><%= servtype.description %></td>
+        <td><%= servtype.servtypeicn %></td>
+        <td><%= link_to 'Show', servtype %></td>
+        <td><%= link_to 'Edit', edit_servtype_path(servtype) %></td>
+        <td><%= link_to 'Destroy', servtype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Servtype', new_servtype_path %>

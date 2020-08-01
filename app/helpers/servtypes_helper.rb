@@ -1,0 +1,2 @@
+module ServtypesHelper
+end

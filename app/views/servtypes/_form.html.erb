@@ -1,0 +1,32 @@
+<%= form_for(servtype) do |f| %>
+  <% if servtype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(servtype.errors.count, "error") %> prohibited this servtype from being saved:</h2>
+
+      <ul>
+      <% servtype.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :servtypeicn %>
+    <%= f.text_field :servtypeicn %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

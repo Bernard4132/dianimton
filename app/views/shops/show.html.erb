@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shop.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shop.description %>
+</p>
+
+<p>
+  <strong>Shopimage:</strong>
+  <%= @shop.shopimage %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @shop.user_id %>
+</p>
+
+<p>
+	<a href="/products/new?shop_id=<%= @shop.id %>">Create product</a>
+</p>
+
+<br>
+
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Back', shops_path %>

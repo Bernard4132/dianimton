@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @servtype.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @servtype.description %>
+</p>
+
+<p>
+  <strong>Servtypeicn:</strong>
+  <%= @servtype.servtypeicn %>
+</p>
+
+<%= link_to 'Edit', edit_servtype_path(@servtype) %> |
+<%= link_to 'Back', servtypes_path %>
