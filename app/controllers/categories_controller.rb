@@ -21,7 +21,7 @@ protect_from_forgery with: :null_session
     @catprods = @category.products
     
     render :status => 200,
-           :json => @catprods}
+           :json => @catprods
    
   end
 
