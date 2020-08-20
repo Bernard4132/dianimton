@@ -2,7 +2,6 @@ class GenservicesController < ApplicationController
   before_action :set_genservice, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token,
                      :if => Proc.new { |c| c.request.format == 'application/json' }
-  skip_before_action :verify_signed_out_user
   protect_from_forgery with: :null_session
 
   # GET /genservices
