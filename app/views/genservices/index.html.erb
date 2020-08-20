@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Genservices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phonenumber</th>
+      <th>Businessdets</th>
+      <th>Servicetype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genservices.each do |genservice| %>
+      <tr>
+        <td><%= genservice.name %></td>
+        <td><%= genservice.email %></td>
+        <td><%= genservice.phonenumber %></td>
+        <td><%= genservice.businessdets %></td>
+        <td><%= genservice.servicetype %></td>
+        <td><%= link_to 'Show', genservice %></td>
+        <td><%= link_to 'Edit', edit_genservice_path(genservice) %></td>
+        <td><%= link_to 'Destroy', genservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Genservice', new_genservice_path %>

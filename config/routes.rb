@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genservices
   resources :servtypes
   resources :services
   resources :categories
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   match '/timelineactivities' , to: 'static_pages#timelineactivities', via: 'get'
   match '/home' , to: 'static_pages#home', via: 'get'
   get 'categoryproducts' =>'categories#categoryproducts', :as => 'categoryproducts'
+  post 'creategserv' => 'genservices#creategserv', :as => 'creategserv'
   
   namespace :api do
   namespace :v1 do 

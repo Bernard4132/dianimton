@@ -1,0 +1,2 @@
+class Genservice < ApplicationRecord
+end

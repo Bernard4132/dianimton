@@ -1,0 +1,42 @@
+<%= form_for(genservice) do |f| %>
+  <% if genservice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(genservice.errors.count, "error") %> prohibited this genservice from being saved:</h2>
+
+      <ul>
+      <% genservice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phonenumber %>
+    <%= f.text_field :phonenumber %>
+  </div>
+
+  <div class="field">
+    <%= f.label :businessdets %>
+    <%= f.text_area :businessdets %>
+  </div>
+
+  <div class="field">
+    <%= f.label :servicetype %>
+    <%= f.text_field :servicetype %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

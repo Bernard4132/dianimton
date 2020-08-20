@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @genservice.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @genservice.email %>
+</p>
+
+<p>
+  <strong>Phonenumber:</strong>
+  <%= @genservice.phonenumber %>
+</p>
+
+<p>
+  <strong>Businessdets:</strong>
+  <%= @genservice.businessdets %>
+</p>
+
+<p>
+  <strong>Servicetype:</strong>
+  <%= @genservice.servicetype %>
+</p>
+
+<%= link_to 'Edit', edit_genservice_path(@genservice) %> |
+<%= link_to 'Back', genservices_path %>

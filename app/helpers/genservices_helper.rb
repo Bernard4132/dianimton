@@ -1,0 +1,2 @@
+module GenservicesHelper
+end
