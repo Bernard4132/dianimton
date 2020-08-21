@@ -13,7 +13,8 @@ before_filter :configure_permitted_parameters
       render :status => 200,
              :json =>  { 
                        :authentication_token => current_user.authentication_token,
-                       :email => current_user.email
+                       :email => current_user.email,
+                       :id => current_user.id
                       }  
     end
   end
