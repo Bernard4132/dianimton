@@ -13,7 +13,8 @@ class Api::V1::SessionsController < Devise::SessionsController
            :json =>  { 
                        :authentication_token => current_user.authentication_token,
                        :email => current_user.email,
-                       :id => current_user.id
+                       :id => current_user.id,
+                       :fullname => current_user.fullname
                       } 
   end
  

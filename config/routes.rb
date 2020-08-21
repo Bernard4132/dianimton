@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       post 'sessions' => 'sessions#create', :as => 'login'
       delete 'sessions' => 'sessions#destroy', :as => 'logout'
     end
-    
+    post 'shopcreate' => 'shops#create', :as => 'shopcreate'
   end
   end
 
