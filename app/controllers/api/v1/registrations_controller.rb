@@ -37,8 +37,8 @@ before_filter :configure_permitted_parameters
 
 
   def configure_permitted_parameters
-  devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :firstname, :fullname) }
-  devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :firstname, :fullname) }
+  devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email,:fullname) }
+  devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:email, :fullname) }
 
 end
 
@@ -49,11 +49,11 @@ private
   # end
 
   def sign_up_params
-    params.permit(:email, :firstname, :fullname)
+    params.permit(:email, :fullname, :password, :password_confirmation)
   end
 
   def account_update_params
-    params.permit(:email, :firstname, :fullname)
+    params.permit(:email, :fullname)
   end
 
   
