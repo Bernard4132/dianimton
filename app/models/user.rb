@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :shops
-  has_many :products      
+  has_many :products
+  has_many :serviceorders
+  has_many :productorders
+  has_many :prodorderfeedbacks      
 
 end

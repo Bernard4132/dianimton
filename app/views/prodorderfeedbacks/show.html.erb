@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Productorder:</strong>
+  <%= @prodorderfeedback.productorder_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @prodorderfeedback.user_id %>
+</p>
+
+<p>
+  <strong>Feedbacktxt:</strong>
+  <%= @prodorderfeedback.feedbacktxt %>
+</p>
+
+<%= link_to 'Edit', edit_prodorderfeedback_path(@prodorderfeedback) %> |
+<%= link_to 'Back', prodorderfeedbacks_path %>

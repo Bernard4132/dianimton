@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :prodorderfeedbacks
+  resources :productorders
+  resources :serviceorders
   resources :genservices
   resources :servtypes
   resources :services
@@ -22,6 +25,9 @@ Rails.application.routes.draw do
       delete 'sessions' => 'sessions#destroy', :as => 'logout'
     end
     post 'shopcreate' => 'shops#create', :as => 'shopcreate'
+    post 'newserviceorder' => 'serviceorders#create', :as => 'newserviceorder'
+    post 'newproductorder' => 'productorders#create', :as => 'newproductorder'
+    post 'newfeedback' => 'prodorderfeedbacks#create' :as => 'newfeedback'
   end
   end
 

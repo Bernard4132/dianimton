@@ -1,0 +1,42 @@
+<%= form_for(serviceorder) do |f| %>
+  <% if serviceorder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(serviceorder.errors.count, "error") %> prohibited this serviceorder from being saved:</h2>
+
+      <ul>
+      <% serviceorder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :service_id %>
+    <%= f.number_field :service_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+  </div>
+
+  <div class="field">
+    <%= f.label :paid %>
+    <%= f.check_box :paid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :addinfo %>
+    <%= f.text_area :addinfo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
