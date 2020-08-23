@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     post 'shopcreate' => 'shops#create', :as => 'shopcreate'
     post 'newserviceorder' => 'serviceorders#create', :as => 'newserviceorder'
     post 'newproductorder' => 'productorders#create', :as => 'newproductorder'
-    post 'newfeedback' => 'prodorderfeedbacks#create' :as => 'newfeedback'
+    post 'newfeedback' => 'prodorderfeedbacks#create', :as => 'newfeedback'
   end
   end
 
