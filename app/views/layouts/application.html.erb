@@ -6,10 +6,285 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <script src="https://use.fontawesome.com/fc6d352727.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
-  <body>
+  <style type="text/css">
+          .navbackground {
+  background-color: rgba(255,255,255, 1);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+-moz-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+}
+
+.navbar-brand1 {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+
+
+
+.navbar-light .navbar-brand1{
+
+font-weight: 600;
+}
+
+.navbar-scroll{
+color: #000; 
+font-weight: 600;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: white;
+}
+
+.navbar-light .navbar-scroll:focus, .navbar-light .navbar-scroll:hover {
+  color: #343a40;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #D0021B;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  transition: background-color .5s ease-in-out;
+    -webkit-transition: background-color .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out;
+  border-bottom: 4px solid transparent;
+}
+
+.navlinkscroll{
+  color: #343a40;
+  
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #f17100;
+  font-weight: 700;
+  /*border-bottom-color:#f17100;*/
+}
+
+ .navbar-light .navbar-nav .nav-link:hover {
+  color: #D0021B;
+  background-color: transparent;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 700;
+  
+}
+
+.navbar-light .navbar-nav .nav-link.disabled {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #D0021B;
+  background-color: transparent;
+  border: 3px solid #D0021B;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+.navbar-toggler:hover {
+  background: transparent !important;
+}
+.navbar-toggler .icon-bar {
+  display:block;
+  background-color: #1b1464;
+  width: 26px;
+  height: 2px;
+  transition: all 0.2s;
+}
+.navbar-toggler .icon-bar+.icon-bar{
+  margin-top: 5px;
+}
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 1rem 0 0;
+  font-size: 14px;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 1);
+  background-clip: padding-box;
+  border-radius: 0rem;
+}
+
+.dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #e9ecef;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 1.25rem 1.5rem;
+  clear: both;
+ color: #000000;
+  font-weight: 300;
+  text-align: inherit;
+  white-space: nowrap;
+  background: none;
+  border: 0;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #1b1464;
+  font-weight: 500;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #e08d1e;
+}
+
+.dropdown-item.disabled, .dropdown-item:disabled {
+  color: #f5b822;
+  background-color: transparent;
+}
+
+.apppartner {
+  background-color: #ffb900;
+  color: #0b1936;
+  font-size: 18px;
+  border-radius: 0px;
+  border: none;
+}
+
+@media only screen and (min-width : 100px) and (max-width : 600px) {
+  .fht {
+    margin-top: 30px;
+  }
+
+}
+  </style>
+
+  <body style="font-family: 'Montserrat', sans-serif;">
+
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top navbackground dottt" style="z-index: 99;">
+      <div class="container navbodyhold">
+        <a class="navbar-brand1" href="/" style="color: #D0021B; font-family: 'Montserrat', sans-serif;">
+        <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/dinimlogo.jpg" class="img-fluid" height="55px" width="42px">
+        <span>Dianimton</span>
+      </a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+        <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button> -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+
+          
+
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" id="changecolor2" target="_blank" href="https://www.youtube.com/channel/UCgKzH9OoD0BAlUoGj79z2og"> Login
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="changecolor2" href="/ourproducts"> |
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="changecolor2" href="/ourproducts"> Register
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <li class="nav-item active">
+              <a class="nav-link" id="changecolor2" target="_blank" href="https://flutterwave.com/pay/odlccfqwjhnu"> 
+                Promote your Business
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            
+           
+          
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+           
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
   </body>
 </html>
