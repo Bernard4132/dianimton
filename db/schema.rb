@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200823111404) do
+ActiveRecord::Schema.define(version: 20200928162001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 20200823111404) do
     t.string   "servicetype"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "objpicture"
+    t.integer  "product_id"
+    t.integer  "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "prodorderfeedbacks", force: :cascade do |t|
@@ -83,14 +91,22 @@ ActiveRecord::Schema.define(version: 20200823111404) do
     t.text     "description"
     t.integer  "servtype_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "serviceimage"
   end
 
   create_table "servtypes", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.string   "servtypeicn"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "servtypeservices", force: :cascade do |t|
+    t.integer  "servtype_id"
+    t.integer  "service_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

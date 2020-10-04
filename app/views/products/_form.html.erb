@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :productimage %>
-    <%= f.text_field :productimage %>
+    <%= f.file_field :productimage %>
   </div>
 
   <div class="form-group">
@@ -32,12 +32,30 @@
     {class: "select", style: "50%"} %>
   </div>
 
-  <div class="field">
+   <br><br>
+<h4> Add Product Images</h4>
+<p>Select images and upload them.</p>
+
+  <div class="form-group">
+    <label><i class="fa fa-upload" aria-hidden="true"></i> Upload product images.</label>
+    <%= f.fields_for :photos, @product.photos do |f_photo| %>
+      <%= f_photo.label :image, :class => 'col-sm-2 control-label' do %>
+      
+      <% end %>
+      <div class="col-sm-10">
+        <%= f_photo.file_field :image, multiple: true, :name=>'product[photos_attributes][][objpicture]', :class => 'form-control' %>
+      </div>
+    <% end %>
+  </div>
+  <br>
+
+
+  <div class="field" style="display: none;">
     <%= f.label :shop_id %>
     <%= f.number_field :shop_id, :value => "#{params[:shop_id]}" %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display: none;">
     <%= f.label :user_id %>
      <%= f.number_field :user_id, :value => "#{current_user.id}" %>
   </div>

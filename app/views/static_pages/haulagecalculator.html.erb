@@ -1,0 +1,269 @@
+<style type="text/css">
+	
+	.btnrentvehicle {
+	  background-color: #D0021B;
+	  font-weight: 600;
+	  color: #ffffff;
+	  border-radius: 0px;
+	  }
+
+	  .btnrentvehicle:hover {
+	    background-color: #D0021B;
+	    font-weight: 600;
+	    color: #ffffff;
+	    border-radius: 0px;
+	  }
+
+	  .btnrentvehicle:hover {
+	    background-color: #D0021B;
+	    font-weight: 600;
+	    color: #ffffff;
+	    border-radius: 0px;
+	  }
+
+</style>
+<section>
+	<div class="container">
+		<div class="row" style="margin-top: 30px;">
+			<div class="col-lg-12">
+				<p style="font-size: 25px; font-weight: 500;">Calculate haulage cost for <span id="haluname"></span></p>
+			</div>
+			<div class="col-lg-7">
+				<form id="haulagecalcs">
+				<div class="form-group">
+				<label>Location of Goods</label>
+					<select id="location1" class="form-control">
+						<option>Select location</option>
+					    <option data-lat="5.6037" data-long="0.1870" data-locname="Accra">Accra</option>
+					    <option data-lat="6.6666" data-long="1.6163" data-locname="Kumasi">Kumasi</option>
+					</select>
+				</div>
+				<div class="form-group">
+				<label>Destination of Goods</label>
+					<select id="location2" class="form-control">
+						<option>Select location</option>
+					    <option data-lat="5.6037" data-long="0.1870" data-locname="Accra">Accra</option>
+					    <option data-lat="6.6666" data-long="1.6163" data-locname="Kumasi">Kumasi</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Tonnage</label>
+					<input type="number" name="tonnamount" placeholder="Eg. 50 tonnes" class="form-control">
+				</div>
+
+				<button id="calcbutton">calculate</button>
+				</form>
+			</div>
+			<div class="col-lg-4">
+				<h6>Total Cost</h6>
+				<p>
+					<span style="color: #D0021B; font-size: 12px; font-weight: 400;">GHC </span><span style="font-size: 22px; font-weight: 600;" id="ttcost">00000</span>
+				</p>
+				<p><a href="" class="btn btnrentvehicle" data-toggle="modal" data-target="#exampleModal" style="display: none;" id="orderbtn">See Order Details</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Haulage Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<form id="paymentForm">
+      	<div class="row">
+      		<div class="col-lg-4">
+      			<div style="width: 100px;">
+      				<p style="text-align: right;">
+      					<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/containertruck.png" width="35px;">
+      				</p>
+      			</div>
+      		</div>
+      		<div class="col-lg-8">
+      			<span id="haultype"></span>
+      		</div>
+      	</div>
+
+      	<div class="row">
+      		<div class="col-lg-4">
+      			<div style="width: 100px;">
+      				<p style="text-align: right; font-weight: 600; font-size: 15px;">
+      					<span>From</span>
+      				</p>
+      			</div>
+      		</div>
+      		<div class="col-lg-8">
+      			<span id="haulfrom"></span>
+      		</div>
+      	</div>
+
+      	<div class="row">
+      		<div class="col-lg-4">
+      			<div style="width: 100px;">
+      				<p style="text-align: right; font-weight: 600; font-size: 15px;">
+      					Destination
+      				</p>
+      			</div>
+      		</div>
+      		<div class="col-lg-8">
+      			<span id="haultto"></span>
+      		</div>
+      	</div>
+
+      	<div class="row">
+      		<div class="col-lg-4">
+      			<div style="width: 100px;">
+      				<p style="text-align: right; font-weight: 600; font-size: 15px; margin-top: 10px;">
+      					Total Cost
+      				</p>
+      			</div>
+      		</div>
+      		<div class="col-lg-8">
+      			<span>GHC </span>
+      			<span id="haultcost" style="font-weight: 600; font-size: 25px;"></span>
+      		</div>
+      	</div>
+      		
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" onclick="payWithPaystack()" class="btn btnrentvehicle">Confirm Payment</button>
+      </div>
+  	</form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+	var lat1 = 0;
+	var lon1 = 0;
+	var lat2 = 0;
+	var lon2 = 0;
+	var tonnes = 0;
+	var totalcost = 0;
+	var distance = 0;
+	var fromname = "";
+	var toname = "";
+	const calcbutton = document.getElementById('calcbutton');
+	const haulform = document.getElementById('haulagecalcs');
+	const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+	var baseprice = urlParams.get('baseprice');
+	var haultype = urlParams.get('haultype');
+	// tonnes = haulform.tonnamount.value;
+	tonnesint = parseInt(tonnes);
+	basepriceint = parseInt(baseprice);
+
+	document.getElementById('haluname').textContent = haultype;
+
+	
+$("#location1").change(function () {
+     // alert($(this).find(':selected').data('lat'));
+     console.log($(this).find(':selected').data('lat') + " " + $(this).find(':selected').data('long'))
+     lat1 = $(this).find(':selected').data('lat');
+     lon1 = $(this).find(':selected').data('long');
+     fromname = $(this).find(':selected').data('locname');
+
+}); 
+
+$("#location2").change(function () {
+     // alert($(this).find(':selected').data('lat'));
+     console.log($(this).find(':selected').data('lat') + " " + $(this).find(':selected').data('long'))
+     lat2 = $(this).find(':selected').data('lat');
+     lon2 = $(this).find(':selected').data('long');
+     toname = $(this).find(':selected').data('locname');
+});
+
+// calcbutton.addEventListener("click", function(){ distance(lat1,lon1,lat2,lon2,"K"); });
+calcbutton.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(haulform.tonnamount.value);
+    // distance(lat1,lon1,lat2,lon2,"K")
+    if ((lat1 == lat2) && (lon1 == lon2)) {
+        return 0;
+    }
+    else {
+        var radlat1 = Math.PI * lat1/180;
+        var radlat2 = Math.PI * lat2/180;
+        var theta = lon1-lon2;
+        var radtheta = Math.PI * theta/180;
+        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+        if (dist > 1) {
+            dist = 1;
+        }
+        dist = Math.acos(dist);
+        dist = dist * 180/Math.PI;
+        dist = dist * 60 * 1.1515;
+        dist = dist * 1.609344;
+        // if (unit=="K") { dist = dist * 1.609344 }
+        // if (unit=="N") { dist = dist * 0.8684 }
+        distance = dist + 50;
+    	totalcost = basepriceint + (haulform.tonnamount.value * 75) + (distance * 8)
+    	console.log(Math.round(totalcost))
+    	document.getElementById('ttcost').textContent = Math.round(totalcost);
+    	document.getElementById('haultype').textContent = haultype;
+    	document.getElementById('haulfrom').textContent = fromname;
+    	document.getElementById('haultto').textContent = toname;
+    	document.getElementById('haultcost').textContent = Math.round(totalcost);
+    	document.getElementById('orderbtn').style.display = "block";
+        // return dist;
+
+
+    }
+})
+
+function payWithPaystack() {
+		console.log("OK");
+		let handler = PaystackPop.setup({
+		email: "ben@nikasemo.com",
+	    key: 'pk_live_b79fd9db9454d240c2734ad0738ab03abc429a7e',
+	    amount: Math.round(totalcost) * 100,
+      	currency: "GHS",
+	    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+	    // label: "Optional string that replaces customer email"
+	    onClose: function(){
+	      alert('Window closed.');
+	    },
+	    callback: function(response){
+	      let message = 'Payment complete! Reference: ' + response.reference;
+	      alert(message);
+	    }
+	  });
+	  handler.openIframe();
+	}
+
+// function distance(lat1, lon1, lat2, lon2, unit) {
+//     if ((lat1 == lat2) && (lon1 == lon2)) {
+//         return 0;
+//     }
+//     else {
+//         var radlat1 = Math.PI * lat1/180;
+//         var radlat2 = Math.PI * lat2/180;
+//         var theta = lon1-lon2;
+//         var radtheta = Math.PI * theta/180;
+//         var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+//         if (dist > 1) {
+//             dist = 1;
+//         }
+//         dist = Math.acos(dist);
+//         dist = dist * 180/Math.PI;
+//         dist = dist * 60 * 1.1515;
+//         if (unit=="K") { dist = dist * 1.609344 }
+//         if (unit=="N") { dist = dist * 0.8684 }
+//         distance = dist + 50;
+//     	totalcost = basepriceint + (tonnesint * 75) + (distance * 8)
+//     	console.log(totalcost)
+//         return dist;
+//     }
+// } 
+
+</script>
+
+<script src="https://js.paystack.co/v1/inline.js"></script> 
+

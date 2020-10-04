@@ -15,6 +15,7 @@ class ServicesController < ApplicationController
   # GET /services/new
   def new
     @service = Service.new
+    @service.photos.new
   end
 
   # GET /services/1/edit
@@ -69,6 +70,6 @@ class ServicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def service_params
-      params.require(:service).permit(:name, :description, :servtype_id, :user_id)
+      params.require(:service).permit(:name, :description, :servtype_ids, :serviceimage, :user_id, :photos_attributes => [:id, :objpicture])
     end
 end

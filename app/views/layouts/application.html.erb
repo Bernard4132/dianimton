@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://use.fontawesome.com/fc6d352727.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,9 +21,7 @@
   background-color: rgba(255,255,255, 1);
   padding-top: 10px;
   padding-bottom: 10px;
-  -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
--moz-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+  
 }
 
 .navbar-brand1 {
@@ -32,6 +32,11 @@ box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 
@@ -209,6 +214,49 @@ font-weight: 600;
   border: none;
 }
 
+.btnsearch {
+  background-color: #D0021B;
+  border-bottom: 2px solid #D0021B;
+  color: #ffffff;
+  border-radius: 0px;
+}
+
+.btnsearch:hover {
+  background-color: #D0021B;
+  border-bottom: 2px solid #D0021B;
+  color: #ffffff;
+  border-radius: 0px;
+}
+
+.btnsearch:active {
+  background-color: #D0021B;
+  border-bottom: 2px solid #D0021B;
+  color: #ffffff;
+  border-radius: 0px;
+}
+
+.textholder {
+  text-align: center;
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #9B9B9B;
+            font-size: 13px;
+            opacity: 0.4; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #9B9B9B;
+            font-size: 13px;
+            opacity: 0.4; /* Firefox */
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+            color: #9B9B9B;
+            font-size: 13px;
+            opacity: 0.4; /* Firefox */
+ }
+
 @media only screen and (min-width : 100px) and (max-width : 600px) {
   .fht {
     margin-top: 30px;
@@ -217,13 +265,13 @@ font-weight: 600;
 }
   </style>
 
-  <body style="font-family: 'Montserrat', sans-serif;">
+  <body style="font-family: 'Montserrat', sans-serif; background-color: rgba(216,216,216,0.3);">
 
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top navbackground dottt" style="z-index: 99;">
+    <nav class="navbar navbar-light navbar-expand-lg navbackground dottt" style="z-index: 99;">
       <div class="container navbodyhold">
-        <a class="navbar-brand1" href="/" style="color: #D0021B; font-family: 'Montserrat', sans-serif;">
-        <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/dinimlogo.jpg" class="img-fluid" height="55px" width="42px">
-        <span>Dianimton</span>
+      <a class="navbar-brand1" href="/" style="color: #D0021B; font-family: 'Montserrat', sans-serif; text-decoration: none;">
+      <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/dinimlogo.jpg" class="img-fluid" height="55px" width="42px">
+      <span>Dianimton</span>
       </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -239,12 +287,34 @@ font-weight: 600;
         </button> -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
 
-          
+          <div class="row no-gutters">
+            <div class="col-lg-10">
+              <input class="form-control" style="width: 400px; border-radius: 0px; border: 2px solid #D0CCCC;" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-lg-2">
+              <button class="btn btnsearch" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+          </div>
+
+         <!--  <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" style="width: 400px; border-radius: 50px; border: 2px solid #eaeaea;" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
 
           <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-              <a class="nav-link" id="changecolor2" target="_blank" href="https://www.youtube.com/channel/UCgKzH9OoD0BAlUoGj79z2og"> Login
+              <a class="nav-link" id="changecolor2" target="_blank" href="https://www.youtube.com/channel/UCgKzH9OoD0BAlUoGj79z2og"> 
+                <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/information+copy.png" width="16px;">
+                Help
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="changecolor2" target="_blank" href="https://www.youtube.com/channel/UCgKzH9OoD0BAlUoGj79z2og"> 
+                <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/login+copy2.png" width="16px">
+                Login
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -256,17 +326,14 @@ font-weight: 600;
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" id="changecolor2" href="/ourproducts"> Register
+              <a class="nav-link" id="changecolor2" href="/ourproducts"> 
+                <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/add-group+copy.png" width="16px">
+                Register
                 <span class="sr-only">(current)</span>
               </a>
             </li>
 
-            <li class="nav-item active">
-              <a class="nav-link" id="changecolor2" target="_blank" href="https://flutterwave.com/pay/odlccfqwjhnu"> 
-                Promote your Business
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
+            
 
             
            
@@ -275,12 +342,251 @@ font-weight: 600;
         </div>
       </div>
     </nav>
+    <section style="padding-top: 12px; padding-bottom: 12px; padding-left: 50px; padding-right: 50px; margin-top: 0px; background-color: #D0021B;">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="textholder">
+            <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 600;">
+              Products
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="textholder">
+            <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 600;">
+              Deals
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="textholder">
+            <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 600;">
+              Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      
+    </div>
+    <div class="col-lg-3">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="textholder">
+            <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
+              <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/conversation+(1).png" width="18px">
+              Requests
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="textholder">
+            <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
+              <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/acct.png" width="18px">
+              Accounts
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="textholder">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <%= yield %>
+
+
+     <style type="text/css">
+
+  .btncontactform {
+    background-color: #e08d1e;
+    color: #ffffff;
+    border: 1px solid #e08d1e;
+    border-radius: 20px;
+    margin-top: 15px;
+  }
+
+  .btncontactform:hover {
+    background-color: #e08d1e;
+    color: #ffffff;
+    border: 1px solid #e08d1e;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
+-moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
+box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
+  }
+
+  .btncontactform:active {
+    background-color: #e08d1e;
+    color: #ffffff;
+    border: 1px solid #e08d1e;
+    border-radius: 20px;
+  }
+
+  .foothead {
+    font-size: 20px;
+    color: #F51E38;
+    font-weight: 600;
+  }
+
+  .ontopfooter {
+    background-color: #D0021B;
+    margin-top: 20px;
+    padding-left: 40px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .innerpadff2 {
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+
+  .innerpadff3 {
+    height: 100%;
+    width: 2px;
+    background-color: #ffffff;
+    margin-left: 40px;
+  }
+
+</style>
+
+<section class="ontopfooter">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="innerpadff1">
+        <span style="color: #F9AE43; font-weight: 600; font-size: 18px;">Get the Latest from Us Always</span><br>
+        <span style="color: #ffffff; font-weight: 300; font-size: 13px;">Keep in touch with us and get the latest deals from us  and save money!</span>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="innerpadff2">
+        <div class="row no-gutters">
+            <div class="col-lg-8">
+              <input class="form-control" style="width: 100% border-radius: 0px; border: 2px solid #D0CCCC;" type="search" placeholder="Enter your phone number" aria-label="Search">
+            </div>
+            <div class="col-lg-4">
+              <button class="btn btn-warning" type="submit" style="margin-left: 10px;">Sign Up</button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-1">
+      <div class="innerpadff3">
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="innerpadff1">
+        <div class="row no-gutters">
+          <div class="col-lg-2">
+            <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/phone.png" width="35px">
+          </div>
+          <div class="col-lg-10">
+            <span style="color: #F9AE43; font-weight: 600; font-size: 18px;">Dianimton App</span><br>
+            <span><a href="" style="color: #ffffff; text-decoration: none;">Download Now <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="py-5" style="background-color: #F9F3F3;">
+      <div class="container">
+        <div class="row">
+        <div class="col-lg-3">
+          <div class="innerfooter">
+            <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/dinimlogotransparent.png" style="width: 80px; margin-bottom: 10px;">
+            <p style="color: #FA5A6E; font-size: 14px;">
+              AG Construct is an integrated construction firm that seeks to bring the dreams .
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="innerfooter">
+            <h4 class="foothead">Explore</h4>
+             <ul style="list-style:none; padding-left:0; font-family: 'Montserrat', sans-serif; font-weight: 200; line-height: 28px;">
+            <li><a href="/" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Home</a></li>
+            <li><a href="/aboutus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">About Us</a></li>
+            <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Services</a></li>
+            <!-- <li><a href="/teams" style="color: #e08d1e; font-weight: 300; font-size: 16px; text-decoration:none;">Our Team</a></li> -->
+            <li><a href="/ourprojects" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Projects</a></li>
+            <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Blog</a></li>
+            <li><a href="/contactus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="innerfooter">
+            <h4 class="foothead">Explore</h4>
+             <ul style="list-style:none; padding-left:0; font-family: 'Montserrat', sans-serif; font-weight: 200; line-height: 28px;">
+            <li><a href="/" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Home</a></li>
+            <li><a href="/aboutus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">About Us</a></li>
+            <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Services</a></li>
+            <!-- <li><a href="/teams" style="color: #e08d1e; font-weight: 300; font-size: 16px; text-decoration:none;">Our Team</a></li> -->
+            <li><a href="/ourprojects" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Projects</a></li>
+            <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Blog</a></li>
+            <li><a href="/contactus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="innerfooter">
+             <h5 class="foothead">Address details</h5>
+             <p style="color: #FA5A6E; font-size: 14px; font-family: 'Montserrat', sans-serif;">
+              <span><i class="fa fa-envelope" aria-hidden="true"></i> Mailing Address</span><br>
+              <span style="font-weight: 300; font-size: 12px;">P.O.Box SR 433,</span><br>
+              <span style="font-weight: 300; font-size: 12px;">SR, Spintex Rd, Accra - Ghana</span>
+             </p>
+             <p style="color: #FA5A6E; font-size: 14px; font-family: 'Montserrat', sans-serif;">
+              <span><i class="fa fa-map-marker" aria-hidden="true"></i> Office Location</span><br>
+              <span style="font-weight: 300; font-size: 12px;">Dianimton, 2nd Floor Orkman Building, Ashaley Botwe Total Station, Little Junction, Accra.</span><br>
+             </p>
+             <p style="color: #FA5A6E; font-size: 14px; font-family: 'Montserrat', sans-serif;">
+              <span><i class="fa fa-phone" aria-hidden="true"></i> Mobile: +233 (0)20 589 2863</span><br>
+              <span><i class="fa fa-phone" aria-hidden="true"></i> Office: +233 (0)30 291 4048</span><br>
+              <span><i class="fa fa-envelope" aria-hidden="true"></i> Email: hello@dianimton.com</span><br>
+             </p>
+             <span><a href="http://www.facebook.com/theglleaders" target="_blank"><i class="fa fa-2x fa-facebook-official" style="color: #D0021B; margin-right: 5px;" aria-hidden="true"></i></a></span>
+             <span><a href="http://www.twitter.com/theglleaders" target="_blank"><i class="fa fa-2x fa-twitter-square" style="color: #D0021B; margin-right: 5px;" aria-hidden="true"></i></a></span>
+             <span><a href="http://www.instagram.com/theglleaders" target="_blank"><i class="fa fa-2x fa-instagram" style="color: #D0021B; margin-right: 5px;" aria-hidden="true"></i></a></span>
+             <span><a href="https://www.linkedin.com/company/thegracedlifeleadershipcentre" target="_blank"><i class="fa fa-2x fa-linkedin-square" style="color: #D0021B; margin-right: 5px;" aria-hidden="true"></i></a></span>
+          </div>
+        </div>
+        
+      </div>
+      
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <div class="row" style="margin-top: 10px; background-color: #ffffff; color: #aeaeae; font-size: 14px;">
+        <div class="col-sm-12" style="padding: 20px;">
+        <p class="m-0 text-center" style="font-family: 'Montserrat', sans-serif;">Copyright &copy; Dianimton, 2020</p>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+
+       <script type="text/javascript">
+          $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+              event.preventDefault();
+              $(this).ekkoLightbox();
+          });
+      </script>
            
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>

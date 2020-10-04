@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   root to: "static_pages#home" 
   match '/timelineactivities' , to: 'static_pages#timelineactivities', via: 'get'
   match '/home' , to: 'static_pages#home', via: 'get'
+  match '/cargohaulage', to: 'static_pages#cargohaulage', via: 'get'
+  match '/haulagecalculator', to: 'static_pages#haulagecalculator', via: 'get'
   get 'categoryproducts' =>'categories#categoryproducts', :as => 'categoryproducts'
   post 'creategserv' => 'genservices#creategserv', :as => 'creategserv'
   
