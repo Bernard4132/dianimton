@@ -507,7 +507,7 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
           <div class="innerfooter">
             <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/dinimlogotransparent.png" style="width: 80px; margin-bottom: 10px;">
             <p style="color: #FA5A6E; font-size: 14px;">
-              AG Construct is an integrated construction firm that seeks to bring the dreams .
+              Dianimton is the worlds first platform that brings shippers products and services .
             </p>
           </div>
         </div>
@@ -522,6 +522,14 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
             <li><a href="/ourprojects" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Projects</a></li>
             <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Blog</a></li>
             <li><a href="/contactus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Contact</a></li>
+            <% if user_signed_in? %>
+            <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete, :style => "color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;" %></li>
+            <li><a href="/dashboard" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Admin Dashboard</a>
+            </li>
+            <% else %>
+            <li><a href="/users/sign_in" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Admin Login</a>
+            </li>
+            <% end %>
             </ul>
           </div>
         </div>
