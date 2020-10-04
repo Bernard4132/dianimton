@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   match '/home' , to: 'static_pages#home', via: 'get'
   match '/cargohaulage', to: 'static_pages#cargohaulage', via: 'get'
   match '/haulagecalculator', to: 'static_pages#haulagecalculator', via: 'get'
+  match '/dashboard', to: 'static_pages#dashboard', via: 'get'
   get 'categoryproducts' =>'categories#categoryproducts', :as => 'categoryproducts'
   post 'creategserv' => 'genservices#creategserv', :as => 'creategserv'
   get 'oneuser' => 'users#oneuser', :as => 'oneuser'

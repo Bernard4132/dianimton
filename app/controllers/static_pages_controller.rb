@@ -17,4 +17,8 @@ def haulagecalculator
 	
 end
 
+def dashboard
+	@products = Product.all
+end
+
 end
