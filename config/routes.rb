@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   resources :shops
+  resources :users
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "static_pages#home" 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   match '/haulagecalculator', to: 'static_pages#haulagecalculator', via: 'get'
   get 'categoryproducts' =>'categories#categoryproducts', :as => 'categoryproducts'
   post 'creategserv' => 'genservices#creategserv', :as => 'creategserv'
+  get 'oneuser' => 'users#oneuser', :as => 'oneuser'
   
   namespace :api do
   namespace :v1 do 

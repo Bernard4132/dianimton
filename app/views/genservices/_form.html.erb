@@ -1,3 +1,26 @@
+<style type="text/css">
+  .btnrentvehicle {
+  background-color: #D0021B;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 10px;
+  }
+
+  .btnrentvehicle:hover {
+    background-color: #D0021B;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+
+  .btnrentvehicle:hover {
+    background-color: #D0021B;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+</style>
+
 <%= form_for(genservice) do |f| %>
   <% if genservice.errors.any? %>
     <div id="error_explanation">
@@ -10,33 +33,39 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<br>
+  <div class="form-group">
+    <label style="color: #D0021B; font-size: 14px; font-weight: 500;">Name</label>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="form-group" style="display: none;">
+    <label style="color: #D0021B; font-size: 14px; font-weight: 500;">Name</label>
+    <%= f.text_field :email, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :phonenumber %>
-    <%= f.text_field :phonenumber %>
+  <div class="form-group">
+    <label style="color: #D0021B; font-size: 14px; font-weight: 500;">Active phone number</label>
+    <%= f.text_field :phonenumber, :class => "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :businessdets %>
-    <%= f.text_area :businessdets %>
+  <div class="form-group">
+    <label style="color: #D0021B; font-size: 14px; font-weight: 500;">Service you are interested in</label>
+    <select name="genservice[servicetype]" id="genservice_servicetype" class="form-control">
+      <option value="transportation">Transportation</option>
+      <option value="travelpolicy">Travel policy</option>
+      <option value="workpermits">Work permits</option>
+      <option value="visaacquisition">Visa acquisition</option>
+      <option value="passportaquisition">Passport aquisition</option>
+    </select>
   </div>
 
-  <div class="field">
-    <%= f.label :servicetype %>
-    <%= f.text_field :servicetype %>
+  <div class="form-group">
+    <label style="color: #D0021B; font-size: 14px; font-weight: 500;">Give more details</label>
+    <%= f.text_area :businessdets, :class => "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit "Submit", :class => "btn btn-lg btnrentvehicle" %>
   </div>
 <% end %>

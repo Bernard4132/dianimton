@@ -1,0 +1,27 @@
+<tr>
+  <td>
+    <%= f.input_field :_destroy, as: :hidden %>
+    <%= link_to 'Delete', '#', class: 'remove_record' %>
+  </td>
+  <td><%= f.input :objpicture, label: false %></td>
+  <td>
+  	<p style="text-align: left;">
+          <img id="headerimage" width="100px" height="100px" />
+   	</p>
+   </td>
+</tr>
+
+
+<script type="text/javascript">
+	document.getElementById("product_photos_attributes_1_objpicture").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("headerimage").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+  };
+</script>
