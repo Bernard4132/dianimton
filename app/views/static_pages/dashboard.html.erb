@@ -81,4 +81,49 @@
 		</div>
 	</div>
 </div>
+
+<div class="row">
+	<div class="col-lg-4">
+		<h5>Product orders</h5>
+			<div class="row">
+			<% Productorder.all.each do |productorder| %>
+
+				<div class="col-lg-12">
+				<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
+				<%= productorder.product.name %>
+				<br>
+				<a href="/productorders/<%= productorder.id %>" style="color: blue;">Order detail</a>
+				</p>
+				</div>
+
+			<% end %>
+			</div>
+	</div>
+	<div class="col-lg-4">
+		<h5>Service orders</h5>
+			<div class="row">
+			<% Serviceorder.all.each do |serviceorder| %>
+
+				<div class="col-lg-12">
+				<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
+				<%= serviceorder.service.name %>
+				<br>
+				<a href="/services/<%= service.id %>" style="color: blue;">Order detail</a>
+				</p>
+				</div>
+
+			<% end %>
+			</div>
+	</div>
+	<div class="col-lg-4">
+	</div>
 </div>
+</div>
+
+
+
+
+
+
+
+

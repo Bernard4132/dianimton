@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   resources :shops
-  resources :users
   devise_for :users
+  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "static_pages#home" 
   match '/timelineactivities' , to: 'static_pages#timelineactivities', via: 'get'
