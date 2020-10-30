@@ -11,57 +11,56 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :serviceimage %>
-    <%= f.file_field :serviceimage %>
+    <%= f.file_field :serviceimage, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :passendgerno %>
-    <%= f.number_field :passendgerno %>
+    <%= f.number_field :passendgerno, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :doorsno %>
-    <%= f.number_field :doorsno %>
+    <%= f.number_field :doorsno, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <label>Automatic Transmission</label>
     <%= f.check_box :autotrans %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <label>Lugagge</label>
     <%= f.check_box :luggage %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <label>Air Conditioning</label>
     <%= f.check_box :aircon %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <label>Power Steering</label>
     <%= f.check_box :powesteer %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <label>Full fuel tank</label>
     <%= f.check_box :fueltankf %>
   </div>
 
-  <br><br>
 <h4> Add Service Images</h4>
 <p>Select images and upload them.</p>
 
@@ -83,10 +82,10 @@
   <div class="form-group">
     <label>Select Service type:</label><br>
    <%= f.collection_select :servtype_ids, Servtype.all, :id, :name, {prompt: "Select Service type"}, 
-    {class: "select", style: "50%"} %>
+    {class: "form-control", style: "width: 50%;"} %>
   </div>
 
-  <div class="field">
+  <div class="form-group" style="display: none;">
     <%= f.label :user_id %>
     <%= f.number_field :user_id, :value => "#{current_user.id}" %>
   </div>
