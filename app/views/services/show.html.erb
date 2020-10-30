@@ -27,7 +27,7 @@
 <div class="container">
 	<div class="row" style="margin-top: 40px;">
 		<div class="col-lg-3">
-			<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/mybenzbigprofile.jpg" class="img-fluid">
+			<img src="<%= @service.serviceimage %>" class="img-fluid">
 		</div>
 		<div class="col-lg-9">
 			<div class="row">
@@ -39,33 +39,52 @@
 					<p>
 						<span style="font-size: 14px; color: #000000; font-weight: 500;">
 						<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/employees.png" width="16px;">
-						4 Pasengers
+						<%= @service.passendgerno %> Pasengers
 						</span>
 						<span style="font-size: 14px; color: #000000; font-weight: 500; margin-left: 10px;">
 						<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/automatic-transmission.png" width="16px;">
+						<% if @service.autotrans == true %>
 						Automatic Transmission
+						<% else %>
+						Manual Transmission
+						<% end %>
 						</span>
 						<span style="font-size: 14px; color: #000000; font-weight: 500; margin-left: 10px;">
 						<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/suitcases.png" width="16px;">
+						
+						<% if @service.luggage == true %>
 						Luggage
+						<% else %>
+						<% end %>
+						
 						</span>
 						<span style="font-size: 14px; color: #000000; font-weight: 500; margin-left: 10px;">
 						<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/fan.png" width="16px;">
+						<% if @service.aircon == true %>
 						Airconditioning
+						<% else %>
+						<% end %>
+						
 						</span>
 					</p>
 					<p>
 						<span style="font-size: 14px; color: #000000; font-weight: 500;">
 						<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/car-door.png" width="16px;">
-						5 doors
+						<%= @service.doorsno %> doors
 						</span>
 						<span style="font-size: 14px; color: #000000; font-weight: 500; margin-left: 10px;">
 						<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/steering.png" width="16px;">
+						<% if @service.powesteer == true %>
 						Power Steering
+						<% else %>
+						<% end %>
 						</span>
 						<span style="font-size: 14px; color: #000000; font-weight: 500; margin-left: 10px;">
 						<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/fuel-station.png" width="16px;">
+						<% if @service.fueltankf == true %>
 						Fuel tank full
+						<% else %>
+						<% end %>
 						</span>
 					</p>
 					<p>
@@ -74,30 +93,13 @@
 				</div>
 				<div class="col-lg-9">
 					<div class="row" style="margin-top: 20px; margin-bottom: 40px;">
-					  <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
-		              <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
-		              <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
-		              <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
-		              <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
-		              <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
-		              <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
-		              <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
-	                  <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/benzgal1.jpg" class="img-fluid">
-		              </a>
+
+					<% @service.photos.each do |photo| %>
+						<a href="<%= photo.objpicture %>" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
+							<img src="<%= photo.objpicture %>" class="img-fluid">
+		              	</a>
+					<% end %>
+					  
 					</div>
 				</div>
 			</div>

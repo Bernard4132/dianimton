@@ -26,7 +26,42 @@
     <%= f.file_field :serviceimage %>
   </div>
 
-   <br><br>
+  <div class="field">
+    <%= f.label :passendgerno %>
+    <%= f.number_field :passendgerno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :doorsno %>
+    <%= f.number_field :doorsno %>
+  </div>
+
+  <div class="field">
+    <label>Automatic Transmission</label>
+    <%= f.check_box :autotrans %>
+  </div>
+
+  <div class="field">
+    <label>Lugagge</label>
+    <%= f.check_box :luggage %>
+  </div>
+
+  <div class="field">
+    <label>Air Conditioning</label>
+    <%= f.check_box :aircon %>
+  </div>
+
+  <div class="field">
+    <label>Power Steering</label>
+    <%= f.check_box :powesteer %>
+  </div>
+
+  <div class="field">
+    <label>Full fuel tank</label>
+    <%= f.check_box :fueltankf %>
+  </div>
+
+  <br><br>
 <h4> Add Service Images</h4>
 <p>Select images and upload them.</p>
 

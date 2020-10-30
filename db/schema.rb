@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200928162001) do
+ActiveRecord::Schema.define(version: 20201030092416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,9 +91,16 @@ ActiveRecord::Schema.define(version: 20200928162001) do
     t.text     "description"
     t.integer  "servtype_id"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "serviceimage"
+    t.integer  "passendgerno"
+    t.boolean  "autotrans",    default: false
+    t.boolean  "luggage",      default: false
+    t.boolean  "aircon",       default: false
+    t.integer  "doorsno"
+    t.boolean  "powesteer",    default: false
+    t.boolean  "fueltankf",    default: false
   end
 
   create_table "servtypes", force: :cascade do |t|
