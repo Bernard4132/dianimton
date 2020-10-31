@@ -1,8 +1,8 @@
 class StaticPagesController < ApplicationController
 
 def home
-	@productsfive = Product.last(5)
-	@servicesfive = Service.last(5)
+	@productsfive = Product.last(4)
+	@servicesfive = Service.all
 end
 
 def timelineactivities
