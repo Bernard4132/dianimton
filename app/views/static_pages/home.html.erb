@@ -217,10 +217,11 @@
 								-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
 								box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
 								background-color: #ffffff;
+								margin-bottom: 20px;
 							}
 
 							.imageforprod {
-								background:linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0)), url('https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/prodstims.png'); 
+								background:linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0)), url('<%= product.productimage %>'); 
 								background-position:center;
 								height: 150px;
 								width: 100%;
@@ -246,13 +247,16 @@
 								<div class="col-lg-12">
 									<div class="holdprodbody">
 										<p style="margin-bottom: 10px; color: #727173; font-weight: 400; font-size: 14px;">
-											<span>Rosewood from the august worship center in Trinidad</span>
+											<span><%= product.name %></span>
+											<span><%= product.shippinglocation %></span>
 										</p>
 										<p style="margin-bottom: 0px; margin-top: 5px; color: #000000; font-weight: 500; font-size: 16px;">
-											<span style="font-weight: 500;">GHC 10,000 - GHC 15,000</span>
+											<span style="font-weight: 500;">
+												USD <%= product.minprice %></span> - USD <%= product.maxprice %>
+											</span>
 										</p>
 										<p style="margin-bottom: 0px; margin-top: 5px; color: #6B6B6B; font-size: 14px; font-weight: 400;">
-											1000pcs <span style="color: #9B9B9B; font-size: 12px; font-weight: 300;">(MOQ)</span>
+											<%= product.moq %> <span style="color: #9B9B9B; font-size: 12px; font-weight: 300;">(MOQ)</span>
 										</p>
 										<p style="margin-bottom: 0px; margin-top: 10px;">
 											<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/approved.png" width="18px">
