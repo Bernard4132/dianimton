@@ -21,6 +21,29 @@
     border-radius: 10px;
   }
 
+  /*.ekko-lightbox-container>div.ekko-lightbox-item {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+}*/
+
+.ekko-lightbox-nav-overlay a {
+    -ms-flex: 1;
+    flex: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .5s;
+    color: red;
+    font-size: 70px;
+    z-index: 1
+}
+
 </style>
 
 
@@ -29,22 +52,15 @@
     <div class="col-lg-4">
       <div class="row">
         <div class="col-lg-12">
-          <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" class="img-fluid">
+          <img src="<%= @product.productimage %>" class="img-fluid">
         </div>
         <div class="col-lg-12">
           <div class="row no-gutters" style="margin-top: 20px; margin-bottom: 40px;">
-            <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px; padding-right: 5px;">
-              <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" class="img-fluid">
+            <% @product.photos.each do |photo| %>
+            <a href="<%= photo.objpicture %>" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px; padding-right: 5px;">
+              <img src="<%= photo.objpicture.thumb %>" class="img-fluid">
             </a>
-            <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px; padding-right: 5px;">
-              <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" class="img-fluid">
-            </a>
-            <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px; padding-right: 5px;">
-              <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" class="img-fluid">
-            </a>
-            <a href="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px; padding-right: 5px;">
-              <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/wood1.jpg" class="img-fluid">
-            </a>
+            <% end %>
           </div>
         </div>
       </div>
