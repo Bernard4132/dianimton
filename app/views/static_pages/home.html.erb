@@ -220,7 +220,7 @@
 								margin-bottom: 20px;
 							}
 
-							.imageforprod {
+							.imageforprod_<%= product.id %> {
 								background:linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0)), url('<%= product.productimage %>'); 
 								background-position:center;
 								height: 150px;
@@ -240,7 +240,7 @@
 								<div class="row">
 
 								<div class="col-lg-12">
-									<div class="imageforprod">
+									<div class="imageforprod_<%= product.id %>">
 									</div>
 								</div>
 
