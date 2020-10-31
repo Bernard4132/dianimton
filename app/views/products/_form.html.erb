@@ -22,6 +22,26 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :minprice %>
+    <%= f.number_field :minprice, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :maxprice %>
+    <%= f.number_field :maxprice, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :moq %>
+    <%= f.text_field :moq, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :shippinglocation %>
+    <%= f.text_field :shippinglocation, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :productimage %>
     <%= f.file_field :productimage, :class => "form-control" %>
     <p style="margin-top: 20px;">
