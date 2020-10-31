@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201030092416) do
+ActiveRecord::Schema.define(version: 20201030170112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20201030092416) do
     t.integer  "doorsno"
     t.boolean  "powesteer",    default: false
     t.boolean  "fueltankf",    default: false
+    t.integer  "price"
   end
 
   create_table "servtypes", force: :cascade do |t|

@@ -291,16 +291,18 @@
 	  <div class="row">
 
 		  <% @servicesfive.each do |service| %>
-		    <div class="col-4 live__scroll--box">
+		    <div class="col-3 live__scroll--box">
 		    	<div class="row">
 		    		<div class="col-lg-12">
-		    			<img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/mybenz.png" 
-		    			class="img-fluid">
+		    			<img src="<%= service.serviceimage %>" class="img-fluid" style="height: 170px;">
 		    		</div>
 		    		<div class="col-lg-12">
-		    			<h5 style="color: #4A4A4A; font-size: 19px; font-weight: 500; margin-top: 10px;">Mercedes S Class</h5>
-		    			<p style="color: #9B9B9B; font-weight: 600; font-size: 14px; margin-bottom: 5px;">5 Seater</p>
-		    			<p style="font-weight: 600; color: #D0021B; font-size: 20px; margin-bottom: 10px;">GHC 500 <span style="font-size: 12px; font-weight: 400; color: #6B6B6B;">/ day</span></p>
+		    			<h5 style="color: #4A4A4A; font-size: 19px; font-weight: 500; margin-top: 10px;">
+		    				<%= service.name %></h5>
+		    			<p style="color: #9B9B9B; font-weight: 600; font-size: 14px; margin-bottom: 5px;">
+		    				<%= service.passendgerno %> Seater</p>
+		    			<p style="font-weight: 600; color: #D0021B; font-size: 20px; margin-bottom: 10px;">
+		    				GHC <%= service.price %> <span style="font-size: 12px; font-weight: 400; color: #6B6B6B;">/ day</span></p>
 		    			<div class="row">
 		    				<div class="col-lg-12">
 		    					<p>
