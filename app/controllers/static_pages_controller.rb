@@ -21,4 +21,8 @@ def dashboard
 	@products = Product.all
 end
 
+def payforrental
+	
+end
+
 end
