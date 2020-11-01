@@ -1,2 +1,114 @@
-<h1>Hello Matic</h1>
-<p>Killy Killy dem!</p>
+<style type="text/css">
+	
+	@media only screen and (min-width : 100px) and (max-width : 600px) {
+		.navbar {
+			display: none;
+		}
+
+		.ontopfooter {
+			display: none;
+		}
+
+		.footerhide {
+			display: none;
+		}
+
+		.hidetopbarred {
+			display: none;
+		}
+	}
+
+</style>
+<br>
+<br>
+<br>
+
+<h4 style="text-align: center; color: #4a4a4a; font-family: 'montserrat', sans-serif;">Make Payment below</h4>
+<p style="text-align: center; color: #4a4a4a; font-weight: 600; font-family: 'montserrat', sans-serif;" id="mptext">
+Pay <span id="pricofgood"></span> for <span id="itembought"></span>.</p>
+<p style="text-align: center; color: #4a4a4a; font-family: 'montserrat', sans-serif; margin-bottom: 0px;" id="pconfmtext">
+Kindly click on the button below to make payment.</p>
+
+<br>
+<form >
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <p style="text-align: center;">
+  <button type="button" class="btn btn-lg btn-success btnformpay" id="paymentbutton" onclick="payWithPaystack()"> 
+  Pay </button>
+  </p>
+  <button type="button" id="paymentconfirmer" style="display: none;" onclick="payConfirmApp()"> Confirm </button>
+  
+  <!--
+  <a id="paymentconfirm" style="display: none;" href="/api/v1/updateuserpaid?user_id=1sLRbhzJ3oOp6Togw7AfCMPjhLf2&subscripttype=semester">Confirm Payment</a>
+  -->
+</form>
+<br>
+<br>
+<br>
+
+
+<script>
+    // function payConfirmApp(){
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          var price = urlParams.get('price');
+          var vehiclename = urlParams.get('vehiclename');
+          var serviceorderid = urlParams.get('serviceorderid');
+          
+          document.getElementById('pricofgood').textContent = price;
+          document.getElementById('itembought').textContent = vehiclename;
+
+          console.log(price + " " + vehiclename + " " + serviceorderid)
+          
+          // jQuery.ajax({
+          // data : { { user_id: user_id } },
+          // type: 'POST',
+          // url: "/api/v1/updateuserpaid"
+          // });
+
+          // jQuery.ajax({
+          // url: "/api/v1/updateuserpaid?user_id=" + user_id,
+          // type: "POST"
+          // });
+    // }
+</script>
+ 
+<script>
+  function payWithPaystack(){
+    var handler = PaystackPop.setup({
+      key: 'pk_live_1cc108547b4c91917c952c4485cf6aa3d111575c',
+      email: 'admin@dianimton.com',
+      amount: price * 100,
+      currency: "GHS",
+      ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+      metadata: {
+         custom_fields: [
+            {
+                display_name: "Mobile Number",
+                variable_name: "mobile_number",
+                value: "+233553393260"
+            }
+         ]
+      },
+      callback: function(response){
+        //   const queryString = window.location.search;
+        //   const urlParams = new URLSearchParams(queryString);
+        //   const user_id = urlParams.get('user_id')
+        //     console.log(queryString);
+        // //   alert('success. transaction ref is ' + response.reference + ' ' + user_id);
+        //   // window.open("https://www.w3schools.com");
+        //   document.getElementById('paymentbutton').style.display = 'none';
+        //   document.getElementById('paymentconfirm').style.display = 'block';
+
+        //   document.getElementById('mptext').style.display = 'none';
+        //   document.getElementById('pconfmtext').style.display = 'block';
+
+          
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();
+  }
+</script>
