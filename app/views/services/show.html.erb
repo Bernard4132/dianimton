@@ -130,7 +130,7 @@
       		<label>Date of return</label>
       		<input type="date" class="form-control" name="">
       	</div>
-        <p>The vehicle you want to rent is Mercedes Benz S550. You will be charged 500 cedis every day. Petrol tank full.</p>
+        <p>The vehicle you want to rent is <%= @service.name %>. You will be charged <%= @service.price %> cedis every day. Petrol tank full.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -170,7 +170,7 @@
 		let handler = PaystackPop.setup({
 		email: "admin@dianimton.com",
 	    key: 'pk_live_1cc108547b4c91917c952c4485cf6aa3d111575c',
-	    amount: 500 * 100,
+	    amount: <%= @service.price %> * 100,
       	currency: "GHS",
 	    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
 	    // label: "Optional string that replaces customer email"
