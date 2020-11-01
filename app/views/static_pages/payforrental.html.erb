@@ -1,4 +1,8 @@
 <style type="text/css">
+
+	.paybodyhold {
+		padding: 30px;
+	}
 	
 	@media only screen and (min-width : 100px) and (max-width : 600px) {
 		.navbar {
@@ -21,27 +25,36 @@
 </style>
 <br>
 <br>
-<br>
 
-<h4 style="text-align: center; color: #4a4a4a; font-family: 'montserrat', sans-serif;">Make Payment below</h4>
-<p style="text-align: center; color: #4a4a4a; font-weight: 600; font-family: 'montserrat', sans-serif;" id="mptext">
-Pay <span id="pricofgood"></span> for <span id="itembought"></span>.</p>
-<p style="text-align: center; color: #4a4a4a; font-family: 'montserrat', sans-serif; margin-bottom: 0px;" id="pconfmtext">
-Kindly click on the button below to make payment.</p>
 
-<br>
-<form >
-  <script src="https://js.paystack.co/v1/inline.js"></script>
-  <p style="text-align: center;">
-  <button type="button" class="btn btn-lg btn-success btnformpay" id="paymentbutton" onclick="payWithPaystack()"> 
-  Pay </button>
-  </p>
-  <button type="button" id="paymentconfirmer" style="display: none;" onclick="payConfirmApp()"> Confirm </button>
-  
-  <!--
-  <a id="paymentconfirm" style="display: none;" href="/api/v1/updateuserpaid?user_id=1sLRbhzJ3oOp6Togw7AfCMPjhLf2&subscripttype=semester">Confirm Payment</a>
-  -->
-</form>
+<section class="paybodyhold">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h4 style="text-align: center; color: #4a4a4a; font-family: 'montserrat', sans-serif;">Make Payment below</h4>
+				<p style="text-align: center; color: #4a4a4a; font-weight: 600; font-family: 'montserrat', sans-serif;" id="mptext">
+				Pay <span id="pricofgood"></span> for <span id="itembought"></span>.</p>
+				<p style="text-align: center; color: #4a4a4a; font-family: 'montserrat', sans-serif; margin-bottom: 0px;" id="pconfmtext">
+				Kindly click on the button below to make payment.</p>
+
+				<br>
+				<form >
+				  <script src="https://js.paystack.co/v1/inline.js"></script>
+				  <p style="text-align: center;">
+				  <button type="button" class="btn btn-lg btn-success btnformpay" id="paymentbutton" onclick="payWithPaystack()"> 
+				  Make Payment </button>
+				  </p>
+				  <button type="button" id="paymentconfirmer" style="display: none;" onclick="payConfirmApp()"> Confirm </button>
+				  
+				  <!--
+				  <a id="paymentconfirm" style="display: none;" href="/api/v1/updateuserpaid?user_id=1sLRbhzJ3oOp6Togw7AfCMPjhLf2&subscripttype=semester">Confirm Payment</a>
+				  -->
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
 <br>
 <br>
 <br>
