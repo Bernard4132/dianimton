@@ -44,6 +44,7 @@
 				  <button type="button" class="btn btn-lg btn-success btnformpay" id="paymentbutton" onclick="payWithPaystack()"> 
 				  Make Payment </button>
 				  </p>
+          <p style="text-align: center; color: green; display: none; font-weight: 500;" id="paysuccs">Your payment has been successful! Click on the close button at the top</p>
 				  <button type="button" id="paymentconfirmer" style="display: none;" onclick="payConfirmApp()"> Confirm </button>
 				  
 				  <!--
@@ -77,6 +78,9 @@
 
         axios.get(url)
           .then(function (response) {
+            document.getElementById('paymentbutton').style.display = 'none';
+            document.getElementById('pconfmtext').style.display = 'none';
+            document.getElementById('paysuccs').style.display = 'block';
             // handle success
             console.log(response);
           })
@@ -147,6 +151,10 @@
           .then(function (response) {
             // handle success
             console.log(response);
+            document.getElementById('paymentbutton').style.display = 'none';
+            document.getElementById('pconfmtext').style.display = 'none';
+            document.getElementById('paysuccs').style.display = 'block';
+
           })
           .catch(function (error) {
             // handle error
