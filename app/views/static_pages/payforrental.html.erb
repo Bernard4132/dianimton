@@ -72,6 +72,14 @@
           document.getElementById('itembought').textContent = vehiclename;
 
           console.log(price + " " + vehiclename + " " + serviceorderid)
+
+          axios({
+          method: 'post',
+          url: 'https://dianimton.herokuapp.com/approveservicepaid',
+          data: {
+            serviceorder_id: 12
+          }
+        });
           
           // jQuery.ajax({
           // data : { { user_id: user_id } },
@@ -115,6 +123,8 @@
 
         //   document.getElementById('mptext').style.display = 'none';
         //   document.getElementById('pconfmtext').style.display = 'block';
+
+        
 
           
       },

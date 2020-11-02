@@ -1,5 +1,8 @@
 class ServiceordersController < ApplicationController
   before_action :set_serviceorder, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token,
+                   :if => Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :null_session
 
   # GET /serviceorders
   # GET /serviceorders.json
@@ -19,6 +22,14 @@ class ServiceordersController < ApplicationController
 
   # GET /serviceorders/1/edit
   def edit
+  end
+
+  def approveservicepaid
+    serviceorderid = params[:serviceorder_id]
+    @serviceorder = Serviceorder.find(serviceorderid)
+    @serviceorder.update_attributes(paid: true)
+    render :status => 200,
+             :json =>  @serviceorder 
   end
 
   # POST /serviceorders

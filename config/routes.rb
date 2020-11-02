@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'categoryproducts' =>'categories#categoryproducts', :as => 'categoryproducts'
   post 'creategserv' => 'genservices#creategserv', :as => 'creategserv'
   get 'oneuser' => 'users#oneuser', :as => 'oneuser'
+  post 'approveservicepaid' => 'serviceorders#approveservicepaid', :as => 'approveservicepaid'
   
   namespace :api do
   namespace :v1 do 
