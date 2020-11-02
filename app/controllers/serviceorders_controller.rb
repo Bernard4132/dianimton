@@ -32,6 +32,14 @@ class ServiceordersController < ApplicationController
              :json =>  @serviceorder 
   end
 
+  def approveservicepaidg
+    serviceorderid = params[:serviceorder_id]
+    @serviceorder = Serviceorder.find(serviceorderid)
+    @serviceorder.update_attributes(paid: true)
+    render :status => 200,
+             :json =>  @serviceorder 
+  end
+
   # POST /serviceorders
   # POST /serviceorders.json
   def create

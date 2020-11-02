@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   post 'creategserv' => 'genservices#creategserv', :as => 'creategserv'
   get 'oneuser' => 'users#oneuser', :as => 'oneuser'
   post 'approveservicepaid' => 'serviceorders#approveservicepaid', :as => 'approveservicepaid'
+  get 'approveservicepaidg' => 'serviceorders#approveservicepaidg', :as => 'approveservicepaidg'
   
   namespace :api do
   namespace :v1 do 

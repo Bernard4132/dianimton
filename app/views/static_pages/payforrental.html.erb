@@ -73,13 +73,26 @@
 
           console.log(price + " " + vehiclename + " " + serviceorderid)
 
-          axios({
-          method: 'post',
-          url: 'https://dianimton.herokuapp.com/approveservicepaid',
-          data: {
-            serviceorder_id: 12
-          }
-        });
+        //   axios({
+        //   method: 'post',
+        //   url: 'https://dianimton.herokuapp.com/approveservicepaid',
+        //   data: {
+        //     serviceorder_id: 12
+        //   }
+        // });
+
+        axios.get('https://dianimton.herokuapp.com/approveservicepaidg?serviceorder_id=12')
+          .then(function (response) {
+            // handle success
+            console.log(response);
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
           
           // jQuery.ajax({
           // data : { { user_id: user_id } },
