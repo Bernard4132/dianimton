@@ -73,15 +73,9 @@
 
           console.log(price + " " + vehiclename + " " + serviceorderid)
 
-        //   axios({
-        //   method: 'post',
-        //   url: 'https://dianimton.herokuapp.com/approveservicepaid',
-        //   data: {
-        //     serviceorder_id: 12
-        //   }
-        // });
+          url = "https://dianimton.herokuapp.com/approveservicepaidg?serviceorder_id="+serviceorderid;
 
-        axios.get('https://dianimton.herokuapp.com/approveservicepaidg?serviceorder_id=12')
+        axios.get(url)
           .then(function (response) {
             // handle success
             console.log(response);
@@ -93,6 +87,16 @@
           .then(function () {
             // always executed
           });
+
+        //   axios({
+        //   method: 'post',
+        //   url: 'https://dianimton.herokuapp.com/approveservicepaid',
+        //   data: {
+        //     serviceorder_id: 12
+        //   }
+        // });
+
+
           
           // jQuery.ajax({
           // data : { { user_id: user_id } },
@@ -137,7 +141,20 @@
         //   document.getElementById('mptext').style.display = 'none';
         //   document.getElementById('pconfmtext').style.display = 'block';
 
-        
+        url = "https://dianimton.herokuapp.com/approveservicepaidg?serviceorder_id="+serviceorderid;
+
+        axios.get(url)
+          .then(function (response) {
+            // handle success
+            console.log(response);
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
 
           
       },
