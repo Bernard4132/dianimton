@@ -74,23 +74,23 @@
 
           console.log(price + " " + vehiclename + " " + serviceorderid)
 
-          url = "https://dianimton.herokuapp.com/approveservicepaidg?serviceorder_id="+serviceorderid;
+        //   url = "https://dianimton.herokuapp.com/approveservicepaidg?serviceorder_id="+serviceorderid;
 
-        axios.get(url)
-          .then(function (response) {
-            document.getElementById('paymentbutton').style.display = 'none';
-            document.getElementById('pconfmtext').style.display = 'none';
-            document.getElementById('paysuccs').style.display = 'block';
-            // handle success
-            console.log(response);
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
-          .then(function () {
-            // always executed
-          });
+        // axios.get(url)
+        //   .then(function (response) {
+        //     document.getElementById('paymentbutton').style.display = 'none';
+        //     document.getElementById('pconfmtext').style.display = 'none';
+        //     document.getElementById('paysuccs').style.display = 'block';
+        //     // handle success
+        //     console.log(response);
+        //   })
+        //   .catch(function (error) {
+        //     // handle error
+        //     console.log(error);
+        //   })
+        //   .then(function () {
+        //     // always executed
+        //   });
 
         //   axios({
         //   method: 'post',
