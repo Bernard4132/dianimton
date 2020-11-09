@@ -1,36 +1,94 @@
-<br><br><br><br>
+
+<style type="text/css">
+  
+  .hrline {
+    height: 4px;
+    background-color: #D0021B;
+    border: none;
+  }
+
+</style>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Productimage</th>
-      <th>Shop</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.productimage %></td>
-        <td><%= product.shop_id %></td>
-        <td><%= product.user_id %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h4>Products</h4>
+      <hr class="hrline" width="15%;" align="left"/>
+    </div>
 
-<br>
+    <div class="col-lg-12">
+      <div class="row">
 
-<%= link_to 'New Product', new_product_path %>
+        <% @products.each do |product| %>
+
+          <style type="text/css">
+              .holdprodpartial{
+                -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
+                -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.31);
+                background-color: #ffffff;
+                margin-bottom: 20px;
+              }
+
+              .imageforprod_<%= product.id %> {
+                background:linear-gradient(0deg,rgba(0,0,0,0),rgba(0,0,0,0)), url('<%= product.productimage %>'); 
+                background-position:center;
+                height: 150px;
+                width: 100%;
+              }
+
+              .holdprodbody {
+                padding: 15px;
+              }
+
+            </style>
+
+            <div class="col-lg-3 col-6">
+              <a href="/products/<%= product.id%>" style="text-decoration: none;">
+              <div class="holdprodpartial">
+
+                <div class="row">
+
+                <div class="col-lg-12">
+                  <div class="imageforprod_<%= product.id %>">
+                  </div>
+                </div>
+
+                <div class="col-lg-12">
+                  <div class="holdprodbody">
+                    <p style="margin-bottom: 10px; color: #727173; font-weight: 400; font-size: 14px;">
+                      <span><%= product.name %></span>
+                      <span><%= product.shippinglocation %></span>
+                    </p>
+                    <p style="margin-bottom: 0px; margin-top: 5px; color: #000000; font-weight: 500; font-size: 16px;">
+                      <span style="font-weight: 500;">
+                        USD <%= product.minprice %></span> - USD <%= product.maxprice %>
+                      </span>
+                    </p>
+                    <p style="margin-bottom: 0px; margin-top: 5px; color: #6B6B6B; font-size: 14px; font-weight: 400;">
+                      <%= product.moq %> <span style="color: #9B9B9B; font-size: 12px; font-weight: 300;">(MOQ)</span>
+                    </p>
+                    <p style="margin-bottom: 0px; margin-top: 10px;">
+                      <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/approved.png" width="18px">
+                      <span style="font-weight: 600; color: #6B6B6B; font-size: 14px; font-weight: 600;">Approved</span>
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+              </div>
+              </a>
+            </div>
+
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+</div>
