@@ -36,6 +36,10 @@
   text-decoration: none;
 }
 
+a.navbar-brand1 {
+  color: #D0021B; 
+}
+
 a {
   text-decoration: none;
 }
@@ -258,10 +262,73 @@ font-weight: 600;
             opacity: 0.4; /* Firefox */
  }
 
+ .hometopmenumobile {
+  display: none;
+ }
+
+ .submenumobile {
+  display: none;
+ }
+
 @media only screen and (min-width : 100px) and (max-width : 600px) {
   .fht {
     margin-top: 30px;
   }
+
+  a.navbar-brand1 {
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  .hidetopbarred {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .hometopmenumobile {
+    display: block;
+  }
+
+  .submenumobile {
+    display: block;
+    background-color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
+-moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
+box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
+  }
+
+  .btnsearch {
+    background-color: #f7af45;
+  }
+
+  .live__scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.live__scroll .row{
+  display: block;
+}
+
+.live__scroll .live__scroll--box2 {
+  display: inline-block;
+  float: none;
+  background-color: #D0021B;
+  border-radius: 15px;
+  padding: 10px;
+  margin-left: 15px;
+  text-align: center;
+} 
+
+.navbar {
+  background-color: #D0021B;
+}
 
 }
   </style>
@@ -270,10 +337,14 @@ font-weight: 600;
 
     <nav class="navbar navbar-light navbar-expand-lg navbackground dottt" style="z-index: 99;">
       <div class="container navbodyhold">
-      <a class="navbar-brand1" href="/" style="color: #D0021B; font-family: 'Montserrat', sans-serif; text-decoration: none;">
-      <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/dinimlogo.jpg" class="img-fluid" height="55px" width="42px">
+      <a class="navbar-brand1" href="/" style="font-family: 'Montserrat', sans-serif; text-decoration: none;">
+      <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/dinimlogotransparent.png" class="img-fluid" height="55px" width="42px">
       <span>Dianimton</span>
       </a>
+      <p style="padding-top: 15px;" class="hometopmenumobile">
+        <span style="color: #ffffff; font-weight: 400; font-size: 14px;">Hello, <a href="" style="color: #ffffff; font-weight: 600; font-size: 14px;">Bernard</a></span>
+        <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/acct.png" class="img-fluid" width="25px" height="25px" style="margin-left: 3px;">
+      </p>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar top-bar"></span>
@@ -401,6 +472,49 @@ font-weight: 600;
   </div>
 </section>
 
+<section class="submenumobile">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-9">
+         <div class="row no-gutters">
+            <div class="col-lg-10 col-10">
+              <input class="form-control" style="width: 100%; border-bottom-left-radius: 10px; border-top-left-radius: 10px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-lg-2 col-2">
+              <button class="btn btnsearch" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-2 col-3" style="text-align: center;">
+        <a href="" style="color: #D0021B; text-decoration: none; text-align: center; font-size: 12px; font-weight: 400; margin-left: 3px;">
+          
+          <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/conversation1.png" width="22px">
+          <span>Requests</span>
+        </a>
+      </div>
+    </div>
+    <div class="live__scroll">
+      <div class="row" style="margin-top: 15px;">
+        <div class="col-3 live__scroll--box2">
+          <a href="" style="color: #ffffff; font-size: 15px; font-weight: 500; text-decoration: none;">Products</a>
+        </div>
+        <div class="col-3 live__scroll--box2">
+          <a href="" style="color: #ffffff; font-size: 15px; font-weight: 500; text-decoration: none;">Services</a>
+        </div>
+        <div class="col-3 live__scroll--box2">
+          <a href="" style="color: #ffffff; font-size: 15px; font-weight: 500; text-decoration: none;">Haulage</a>
+        </div>
+        <div class="col-3 live__scroll--box2">
+          <a href="" style="color: #ffffff; font-size: 15px; font-weight: 500; text-decoration: none;">Tracking</a>
+        </div>
+        <div class="col-3 live__scroll--box2">
+          <a href="" style="color: #ffffff; font-size: 15px; font-weight: 500; text-decoration: none;">General</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     <%= yield %>
 
 
@@ -458,41 +572,72 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
     margin-left: 40px;
   }
 
+  @media only screen and (min-width : 100px) and (max-width : 600px) {
+    .innerpadff2 {
+    padding-top: 0px;
+    padding-left: 0px;
+  }
+
+  .innerpadff3 {
+    height: 100%;
+    width: 2px;
+    background-color: #ffffff;
+    margin-left: 10px;
+  }
+
+  .mobilenamet {
+    font-size: 12px;
+  }
+
+  .mobileimageicn {
+    width: 30px;
+  }
+
+  .donloadtextmb {
+    font-size: 12px;
+  }
+
+  }
+
 </style>
 
 <section class="ontopfooter">
   <div class="row">
-    <div class="col-lg-4">
-      <div class="innerpadff1">
-        <span style="color: #F9AE43; font-weight: 600; font-size: 18px;">Get the Latest from Us Always</span><br>
-        <span style="color: #ffffff; font-weight: 300; font-size: 13px;">Keep in touch with us and get the latest deals from us  and save money!</span>
-      </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="innerpadff2">
-        <div class="row no-gutters">
-            <div class="col-lg-8">
-              <input class="form-control" style="width: 100% border-radius: 0px; border: 2px solid #D0CCCC;" type="search" placeholder="Enter your phone number" aria-label="Search">
-            </div>
-            <div class="col-lg-4">
-              <button class="btn btn-warning" type="submit" style="margin-left: 10px;">Sign Up</button>
-            </div>
+    <div class="col-lg-7 col-7">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="innerpadff1">
+            <span style="color: #F9AE43; font-weight: 600; font-size: 18px;">Get the Latest from Us Always</span><br>
+            <span style="color: #ffffff; font-weight: 300; font-size: 13px;">Keep in touch with us and get the latest deals from us  and save money!</span>
           </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="innerpadff2">
+            <div class="row no-gutters">
+                <div class="col-lg-8 col-8">
+                  <input class="form-control" style="width: 100% border-radius: 0px; border: 2px solid #D0CCCC;" type="search" placeholder="Enter your phone number" aria-label="Search">
+                </div>
+                <div class="col-lg-4 col-4">
+                  <button class="btn btn-warning" type="submit" style="margin-left: 10px;">Sign Up</button>
+                </div>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-lg-1">
+    <div class="col-lg-1 col-1">
       <div class="innerpadff3">
       </div>
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-3 col-3">
       <div class="innerpadff1">
         <div class="row no-gutters">
           <div class="col-lg-2">
-            <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/phone.png" width="35px">
+            <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/phone.png" width="35px" class="mobileimageicn">
           </div>
           <div class="col-lg-10">
-            <span style="color: #F9AE43; font-weight: 600; font-size: 18px;">Dianimton App</span><br>
-            <span><a href="" style="color: #ffffff; text-decoration: none;">Download Now <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
+            <span style="color: #F9AE43; font-weight: 600; font-size: 18px;" class="mobilenamet">Dianimton App</span><br>
+            <span><a href="" style="color: #ffffff; text-decoration: none;" class="donloadtextmb">Download Now <i class="fa fa-chevron-right" aria-hidden="true"></i></a></span>
           </div>
         </div>
       </div>
