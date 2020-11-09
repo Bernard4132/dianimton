@@ -24,6 +24,13 @@ class ServiceordersController < ApplicationController
   def edit
   end
 
+  def myserviceorders
+    userid = params[:user_id]
+    @myservs = Serviceorder.where(user_id: userid)
+    render :status => 200,
+           :json => @myservs 
+  end
+
   def approveservicepaid
     serviceorderid = params[:serviceorder_id]
     @serviceorder = Serviceorder.find(serviceorderid)

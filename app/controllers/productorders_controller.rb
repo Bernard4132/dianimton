@@ -1,5 +1,8 @@
 class ProductordersController < ApplicationController
   before_action :set_productorder, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token,
+                   :if => Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :null_session
 
   # GET /productorders
   # GET /productorders.json
@@ -19,6 +22,13 @@ class ProductordersController < ApplicationController
 
   # GET /productorders/1/edit
   def edit
+  end
+
+  def myproductorders
+    userid = params[:user_id]
+    @myprods = Productorder.where(user_id: userid)
+    render :status => 200,
+           :json => @myprods 
   end
 
   # POST /productorders

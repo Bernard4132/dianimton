@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get 'oneuser' => 'users#oneuser', :as => 'oneuser'
   post 'approveservicepaid' => 'serviceorders#approveservicepaid', :as => 'approveservicepaid'
   get 'approveservicepaidg' => 'serviceorders#approveservicepaidg', :as => 'approveservicepaidg'
+  get 'myproductorders' => 'productorders#myproductorders', :as => 'myproductorders'
+  get 'myserviceorders' => 'serviceorders#myserviceorders', :as => 'myserviceorders'
   
   namespace :api do
   namespace :v1 do 

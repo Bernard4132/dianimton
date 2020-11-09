@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20201031211312) do
     t.string   "categoryicon"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
+  end 
 
   create_table "categoryproducts", force: :cascade do |t|
     t.integer  "category_id"
