@@ -96,7 +96,7 @@
 					<div class="row" style="margin-top: 20px; margin-bottom: 40px;">
 
 					<% @service.photos.each do |photo| %>
-						<a href="<%= photo.objpicture %>" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 lbhove" style="margin-bottom: 20px;">
+						<a href="<%= photo.objpicture %>" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-3 col-3 lbhove" style="margin-bottom: 20px;">
 							<img src="<%= photo.objpicture %>" class="img-fluid">
 		              	</a>
 					<% end %>
