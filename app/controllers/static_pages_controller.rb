@@ -25,4 +25,8 @@ def payforrental
 	
 end
 
+def privacypolicy
+	
+end
+
 end
