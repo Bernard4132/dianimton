@@ -16,7 +16,7 @@
 		<div class="col-lg-12">
 			<div class="holddashboardhead">
 				<h1 style="text-align: center;">Welcome</h1>
-				<p style="text-align: center;">Welcome to the admin dashboard. Manage The Felisco-Sun Ghana Ltd. from here.</p>
+				<p style="text-align: center;">Welcome to the admin dashboard. Manage Di Anim Ton. from here.</p>
 			</div>
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 		<div class="col-lg-4">
 			<h5>Products</h5>
 			<div class="row">
-				<% Product.all.each do |product| %>
+				<% Product.last(5).each do |product| %>
 				<div class="col-lg-12">
 					<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
 						<%= product.name %><br>
@@ -53,7 +53,7 @@
 		<div class="col-lg-4">
 			<h5>Rental Services</h5>
 			<div class="row">
-			<% Service.all.each do |service| %>
+			<% Service.last(5).each do |service| %>
 
 				<div class="col-lg-12">
 				<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
@@ -70,7 +70,7 @@
 		<div class="col-lg-4">
 			<h5>General Services</h5>
 			<div class="row">
-			<% Genservice.all.each do |genservice| %>
+			<% Genservice.last(5).each do |genservice| %>
 					<div class="col-lg-12">
 					<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
 					<%= genservice.name %><br>
@@ -87,7 +87,7 @@
 	<div class="col-lg-4">
 		<h5>Product orders</h5>
 			<div class="row">
-			<% Productorder.all.each do |productorder| %>
+			<% Productorder.last(5).each do |productorder| %>
 
 				<div class="col-lg-12">
 				<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
@@ -105,7 +105,7 @@
 	<div class="col-lg-4">
 		<h5>Service orders</h5>
 			<div class="row">
-			<% Serviceorder.all.each do |serviceorder| %>
+			<% Serviceorder.last(5).each do |serviceorder| %>
 
 				<div class="col-lg-12">
 				<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
