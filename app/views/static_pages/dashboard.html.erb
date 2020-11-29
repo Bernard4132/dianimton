@@ -68,19 +68,20 @@
 		</div>
 
 		<div class="col-lg-4">
-			<h5>General Services</h5>
+			<h5>Shops</h5>
 			<div class="row">
-			<% Genservice.last(5).each do |genservice| %>
+			<% Shop.last(5).each do |shop| %>
 					<div class="col-lg-12">
 					<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
-					<%= genservice.name %><br>
-					<a href="/genservices/<%= genservice.id %>" style="color: blue;">General service detail</a>
+					<%= shop.name %><br>
+					<a href="/genservices/<%= shop.id %>" style="color: blue;">Shop detail</a>
 					</p>
 					</div>
 
 				<% end %>
 		</div>
 	</div>
+
 </div>
 
 <div class="row">
@@ -121,6 +122,18 @@
 			</div>
 	</div>
 	<div class="col-lg-4">
+			<h5>General Services</h5>
+			<div class="row">
+			<% Genservice.last(5).each do |genservice| %>
+					<div class="col-lg-12">
+					<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
+					<%= genservice.name %><br>
+					<a href="/genservices/<%= genservice.id %>" style="color: blue;">General service detail</a>
+					</p>
+					</div>
+
+				<% end %>
+		</div>
 	</div>
 </div>
 </div>
