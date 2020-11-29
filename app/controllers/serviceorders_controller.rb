@@ -28,7 +28,7 @@ class ServiceordersController < ApplicationController
     userid = params[:user_id]
     @myservs = Serviceorder.where(user_id: userid)
     render :status => 200,
-           :json => @myservs 
+           :json => @myservs , :include => [:service]
   end
 
   def approveservicepaid

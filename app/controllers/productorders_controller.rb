@@ -28,7 +28,7 @@ class ProductordersController < ApplicationController
     userid = params[:user_id]
     @myprods = Productorder.where(user_id: userid)
     render :status => 200,
-           :json => @myprods 
+           :json => @myprods, :include => [:product]
   end
 
   # POST /productorders
