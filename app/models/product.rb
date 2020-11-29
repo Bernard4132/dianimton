@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+	default_scope -> { order('created_at DESC') }
 	belongs_to :shop, optional: :true
 	has_many :categoryproducts
 	has_many :categories, through: :categoryproducts
