@@ -456,10 +456,17 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
         </div>
         <div class="col-lg-5">
           <div class="textholder">
+            <% if user_signed_in? %>
+            <a href="/homeprofile" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
+              <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/acct.png" width="18px">
+              Accounts
+            </a>
+            <% else %>
             <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
               <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/acct.png" width="18px">
               Accounts
             </a>
+            <% end %>
           </div>
         </div>
         <div class="col-lg-2">

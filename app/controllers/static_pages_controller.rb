@@ -13,6 +13,10 @@ def cargohaulage
 	
 end
 
+def homeprofile
+	
+end
+
 def haulagecalculator
 	
 end
