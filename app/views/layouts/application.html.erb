@@ -342,7 +342,13 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
       <span>Dianimton</span>
       </a>
       <p style="padding-top: 15px;" class="hometopmenumobile">
-        <span style="color: #ffffff; font-weight: 400; font-size: 14px;">Hello, <a href="" style="color: #ffffff; font-weight: 600; font-size: 14px;">Bernard</a></span>
+        <span style="color: #ffffff; font-weight: 400; font-size: 14px;">Hello, 
+          <% if user_signed_in? %>
+          <a href="" style="color: #ffffff; font-weight: 600; font-size: 14px;">Bernard</a></span>
+          <% else %>
+           <a href="/users/sign_in" style="color: #ffffff; font-weight: 600; font-size: 14px;">Login</a></span> 
+          <% end %>
+
         <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/acct.png" class="img-fluid" width="25px" height="25px" style="margin-left: 3px;">
       </p>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
