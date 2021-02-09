@@ -56,7 +56,7 @@ class ShopsController < ApplicationController
   def destroy
     @shop.destroy
     respond_to do |format|
-      format.html { redirect_to shops_url, notice: 'Shop was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Shop was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
