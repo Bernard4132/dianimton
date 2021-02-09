@@ -2,12 +2,16 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @productorder.product_id %>
+  <% if productorder.product %>
+  <%= @productorder.product.name %>
+  <% end %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @productorder.user_id %>
+  <strong>Order email:</strong>
+  <% if productorder.user %>
+  <%= @productorder.user.email %>
+  <% end %>
 </p>
 
 <p>
@@ -16,14 +20,11 @@
 </p>
 
 <p>
-  <strong>Paid:</strong>
+  <strong>Order paid Status:</strong>
   <%= @productorder.paid %>
 </p>
 
-<p>
-  <strong>Addinfo:</strong>
-  <%= @productorder.addinfo %>
-</p>
+
 
 <%= link_to 'Edit', edit_productorder_path(@productorder) %> |
 <%= link_to 'Back', productorders_path %>
