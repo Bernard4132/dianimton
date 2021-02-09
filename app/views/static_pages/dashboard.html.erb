@@ -95,6 +95,9 @@
 				<% if productorder.product %>
 				<%= productorder.product.name %>
 				<% end %>
+				<% if productorder.product %>
+				<img src="<%= productorder.product.productimage %>" class="img-fluid">
+				<% end %>
 				<br>
 				<a href="/productorders/<%= productorder.id %>" style="color: blue;">Order detail</a>
 				</p>
