@@ -2,14 +2,14 @@
 
 <p>
   <strong>Product:</strong>
-  <% if productorder.product %>
+  <% if @productorder.product %>
   <%= @productorder.product.name %>
   <% end %>
 </p>
 
 <p>
   <strong>Order email:</strong>
-  <% if productorder.user %>
+  <% if @productorder.user %>
   <%= @productorder.user.email %>
   <% end %>
 </p>
