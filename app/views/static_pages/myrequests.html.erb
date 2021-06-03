@@ -1,0 +1,118 @@
+<style type="text/css">
+  .prodilehomesect {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .tab-content {
+    background-color: #ffffff;
+    padding: 20px;
+  }
+
+ .nav-pills .nav-link.active {
+    background-color: #ff0000!important;
+ }
+
+</style>
+
+
+<section class="prodilehomesect">
+  <div class="container">
+    <div class="row">
+  <div class="col-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Product Requests</a>
+      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Service Requests</a>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+        <div class="row">
+          <div class="col-lg-9">
+            <h5>My product orders</h5>
+            <br>
+            <div class="row">
+            <% current_user.productorders.each do |productorder| %>
+
+              <div class="col-lg-12">
+
+
+                <div class="row">
+                      <div class="col-lg-4">
+                         <% if productorder.product %>
+                          <img src="<%= productorder.product.productimage %>" class="img-fluid">
+                         <% end %>
+                      </div>
+                      <div class="col-lg-8">
+                        <p>
+                         <% if productorder.product %>
+                          <%= productorder.product.name %>
+                         <% end %>
+                       </p>
+                       <p>
+                         <a href="/productorders/<%= productorder.id %>" style="color: blue;">Order detail</a>
+                       </p>
+                      </div>
+                    </div>
+               <br>     
+              <hr>
+              <br>
+
+
+              </div>
+
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+        <div class="row">
+          <div class="col-lg-9">
+            <h5>My product orders</h5>
+            <br>
+            <div class="row">
+                <% current_user.serviceorders.each do |serviceorder| %>
+
+                  <div class="col-lg-12">
+                    
+                    <div class="row">
+                      <div class="col-lg-4">
+                         <% if serviceorder.service %>
+                          <img src="<%= serviceorder.service.serviceimage %>" class="img-fluid">
+                         <% end %>
+                      </div>
+                      <div class="col-lg-8">
+                        <p>
+                         <% if serviceorder.service %>
+                         <%= serviceorder.service.name %>
+                         <% end %>
+                       </p>
+                       <p>
+                         <a href="/serviceorders/<%= serviceorder.id %>" style="color: blue;">Order detail</a>
+                       </p>
+                      </div>
+                    </div>
+                    <br>     
+                    <hr>
+                    <br>
+                   
+                  </div>
+
+                <% end %>
+            </div>
+          </div>
+
+      </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+
+

@@ -344,7 +344,7 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
       <p style="padding-top: 15px;" class="hometopmenumobile">
         <span style="color: #ffffff; font-weight: 400; font-size: 14px;">Hello, 
           <% if user_signed_in? %>
-          <a href="" style="color: #ffffff; font-weight: 600; font-size: 14px;">Bernard</a></span>
+          <a href="" style="color: #ffffff; font-weight: 600; font-size: 14px;">User</a></span>
           <% else %>
            <a href="/users/sign_in" style="color: #ffffff; font-weight: 600; font-size: 14px;">Login</a></span> 
           <% end %>
@@ -388,7 +388,9 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            <% if user_signed_in? %>
 
+            <% else %>
             <li class="nav-item">
               <a class="nav-link" id="changecolor2" href="/users/sign_in"> 
                 <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/login+copy2.png" width="16px">
@@ -397,7 +399,8 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
               </a>
             </li>
 
-            <li class="nav-item">
+
+             <li class="nav-item">
               <a class="nav-link" id="changecolor2" href="/ourproducts"> |
                 <span class="sr-only">(current)</span>
               </a>
@@ -410,6 +413,10 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+
+            <% end %>
+
+           
 
             
 
@@ -454,10 +461,12 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
       <div class="row">
         <div class="col-lg-5">
           <div class="textholder">
-            <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
+             <% if user_signed_in? %>
+            <a href="/myrequests" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
               <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/conversation+(1).png" width="18px">
               Requests
             </a>
+            <% end %>
           </div>
         </div>
         <div class="col-lg-5">
@@ -468,7 +477,7 @@ box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.18);
               Accounts
             </a>
             <% else %>
-            <a href="" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
+            <a href="/users/sign_in" style="color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 400;">
               <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/acct.png" width="18px">
               Accounts
             </a>
@@ -662,25 +671,25 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
   <footer class="py-5 footerhide" style="background-color: #F9F3F3;">
       <div class="container">
         <div class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-4">
           <div class="innerfooter">
             <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/dianimton-assets/web+assets/dinimlogotransparent.png" style="width: 80px; margin-bottom: 10px;">
             <p style="color: #FA5A6E; font-size: 14px;">
-              Dianimton is the worlds first platform that brings shippers products and services .
+              The Dianimton platform is a leading wholesale mobile marketplace for global trade. Buy products from suppliers in Ghana and around the world, all from the convenience of your mobile device. Also get access to services that will make business easy and seamless for you.
             </p>
           </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-4">
           <div class="innerfooter">
             <h4 class="foothead">Explore</h4>
              <ul style="list-style:none; padding-left:0; font-family: 'Montserrat', sans-serif; font-weight: 200; line-height: 28px;">
             <li><a href="/" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Home</a></li>
-            <li><a href="/aboutus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">About Us</a></li>
-            <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Services</a></li>
+            <li><a href="/products" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Products</a></li>
+            <li><a href="/servces" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Services</a></li>
             <!-- <li><a href="/teams" style="color: #e08d1e; font-weight: 300; font-size: 16px; text-decoration:none;">Our Team</a></li> -->
-            <li><a href="/ourprojects" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Projects</a></li>
+            <!-- <li><a href="/ourprojects" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Projects</a></li>
             <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Blog</a></li>
-            <li><a href="/contactus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Contact</a></li>
+             -->
             <% if user_signed_in? %>
             <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete, :style => "color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;" %></li>
             <li><a href="/dashboard" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Admin Dashboard</a>
@@ -692,36 +701,23 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
             </ul>
           </div>
         </div>
-        <div class="col-lg-3">
-          <div class="innerfooter">
-            <h4 class="foothead">Explore</h4>
-             <ul style="list-style:none; padding-left:0; font-family: 'Montserrat', sans-serif; font-weight: 200; line-height: 28px;">
-            <li><a href="/" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Home</a></li>
-            <li><a href="/aboutus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">About Us</a></li>
-            <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Services</a></li>
-            <!-- <li><a href="/teams" style="color: #e08d1e; font-weight: 300; font-size: 16px; text-decoration:none;">Our Team</a></li> -->
-            <li><a href="/ourprojects" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Projects</a></li>
-            <li><a href="#!" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Blog</a></li>
-            <li><a href="/contactus" style="color: #FA5A6E; font-weight: 300; font-size: 14px; text-decoration:none;">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+        
 
-        <div class="col-lg-3">
+        <div class="col-lg-4">
           <div class="innerfooter">
-             <h5 class="foothead">Address details</h5>
+             <h5 class="foothead">Locate Us</h5>
              <p style="color: #FA5A6E; font-size: 14px; font-family: 'Montserrat', sans-serif;">
               <span><i class="fa fa-envelope" aria-hidden="true"></i> Mailing Address</span><br>
               <span style="font-weight: 300; font-size: 12px;">P.O.Box SR 433,</span><br>
-              <span style="font-weight: 300; font-size: 12px;">SR, Spintex Rd, Accra - Ghana</span>
+              <span style="font-weight: 300; font-size: 12px;">Tema, Greater Accra, Ghana</span>
              </p>
              <p style="color: #FA5A6E; font-size: 14px; font-family: 'Montserrat', sans-serif;">
               <span><i class="fa fa-map-marker" aria-hidden="true"></i> Office Location</span><br>
-              <span style="font-weight: 300; font-size: 12px;">Dianimton, 2nd Floor Orkman Building, Ashaley Botwe Total Station, Little Junction, Accra.</span><br>
+              <span style="font-weight: 300; font-size: 12px;">Afia Pokua Plaza, Tema Community 7.</span><br>
              </p>
              <p style="color: #FA5A6E; font-size: 14px; font-family: 'Montserrat', sans-serif;">
-              <span><i class="fa fa-phone" aria-hidden="true"></i> Mobile: +233 (0)20 589 2863</span><br>
-              <span><i class="fa fa-phone" aria-hidden="true"></i> Office: +233 (0)30 291 4048</span><br>
+              <span><i class="fa fa-phone" aria-hidden="true"></i> Mobile: 233(0)248238541/+233(0)262129553</span><br>
+              <span><i class="fa fa-phone" aria-hidden="true"></i> WhatsApp: +233507072708</span><br>
               <span><i class="fa fa-envelope" aria-hidden="true"></i> Email: hello@dianimton.com</span><br>
              </p>
              <span><a href="http://www.facebook.com/theglleaders" target="_blank"><i class="fa fa-2x fa-facebook-official" style="color: #D0021B; margin-right: 5px;" aria-hidden="true"></i></a></span>
@@ -739,7 +735,7 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
 
     <div class="row" style="margin-top: 10px; background-color: #ffffff; color: #aeaeae; font-size: 14px;">
         <div class="col-sm-12" style="padding: 20px;">
-        <p class="m-0 text-center" style="font-family: 'Montserrat', sans-serif;">Copyright &copy; Dianimton, 2020</p>
+        <p class="m-0 text-center" style="font-family: 'Montserrat', sans-serif;">Copyright &copy; Dianimton, 2021</p>
       </div>
     </div>
 

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   match '/payforrental', to: 'static_pages#payforrental', via: 'get'
   match '/privacypolicy', to: 'static_pages#privacypolicy', via: 'get'
   match '/homeprofile', to: 'static_pages#homeprofile', via: 'get'
+  match '/myrequests', to: 'static_pages#myrequests', via: 'get'
   get 'categoryproducts' =>'categories#categoryproducts', :as => 'categoryproducts'
   post 'creategserv' => 'genservices#creategserv', :as => 'creategserv'
   get 'oneuser' => 'users#oneuser', :as => 'oneuser'

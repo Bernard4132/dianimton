@@ -17,6 +17,10 @@ def homeprofile
 	
 end
 
+def myrequests
+	
+end
+
 def haulagecalculator
 	
 end
